@@ -1,6 +1,6 @@
 # GitHub User Profile Find And Keeper
 
-### Este projeto destina-se à encontrar, armazenar e retornar perfis de usuários do github.
+### Este projeto tem por objetivo encontrar, armazenar e retornar perfis de usuários do github.
 
 ## Arquitetura
 
