@@ -45,7 +45,7 @@ invés de interfaces mais gerais;
 * A inversão de dependência, como já foi dito lá em cima, foi utilizada para estabelecer a comunicação entre as camadas
 que, desta forma, conseguem seguir o fluxo de comunicação estabelecido pelo design arquitetural.
 
-## Tratamento de exceções
+## Tratamento de exceção
 
 Foi implementada uma exceção que envelopa as possíveis causas de erro de negócio da aplicação. Ela é lançada sempre que 
 ocorrem erros por conta da interação do usuário com a aplicação e é interceptada por uma classe capaz de retornar respostas
@@ -58,7 +58,7 @@ estão sendo interceptadas de forma genérica e uma resposta padrão é retornad
 
 * A consulta ao perfil de usuário do GitHub;
 * o salvamento do perfil do usuário que se originou dessa consulta à API;
-* a alteração do perfil do usuário salvo na base este tenha sido persistido anteriormente
+* a alteração do perfil do usuário salvo no banco de dados, caso este tenha sido persistido anteriormente
 * e o retorno do perfil do usuário para o cliente http.
 
 ## Como utilizar
