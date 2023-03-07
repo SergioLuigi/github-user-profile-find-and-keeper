@@ -58,7 +58,7 @@ estão sendo interceptadas de forma genérica e uma resposta padrão é retornad
 
 * A consulta ao perfil de usuário do GitHub;
 * o salvamento do perfil do usuário que se originou dessa consulta à API;
-* a alteração do perfil do usuário salvo no banco de dados, caso este tenha sido persistido anteriormente
+* a alteração do perfil do usuário salvo no banco de dados, caso este tenha sido persistido anteriormente;
 * e o retorno do perfil do usuário para o cliente http.
 
 ## Como utilizar
@@ -68,7 +68,7 @@ abra um terminal na pasta onde o projeto foi baixado e digite no terminal:
 
     docker-compose -f .\Docker\docker-compose.yaml up -d
 
-A aplicação rodará utilizando os valores para as variáveis de ambientes presentes no arquivo .\Docker\.env:
+A aplicação rodará utilizando os valores para as variáveis de ambientes presentes no arquivo .\Docker\\.env:
 
     POSTGRESQL_DB=github-user-profile-find-and-keeper
     POSTGRESQL_PASSWORD=postgres
