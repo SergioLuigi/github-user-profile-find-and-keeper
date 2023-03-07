@@ -6,11 +6,10 @@
 
 Eu escolhi uma interpretação do modelo de arquitetura em camadas chamado Arquitetura Limpa. Além de ser um design arquitetural
 pelo qual tenho me interessado cada vez mais, acredito que utilizarei essa aplicação para testes com outras técnologias,
-o que a obrigará a crescer. Para que isso ocorra de forma organizada, segui, desde o começo da implementação, as ideias 
-do Uncle Bob, autor do livro "Arquitetura Limpa", que estabelece, principalmente, mas não somente, insights de como deve 
-ser a arquitetura de uma aplicação manutenível o suficiente para durar e não elevar de mais os seus custos com o tempo.
+o que a obrigará a crescer. Para que isso ocorra de forma organizada segui os insights do Uncle Bob, autor do livro "Arquitetura Limpa", 
+que fala sobre como as camadas de uma aplicação devem se comunicar para que elas possam ser melhor mantidas no tempo.
 
-Como pode ser visto ao se examinar o projeto, criei duas camadas, "domain" e "infraestructure": 
+Criei duas camadas, "domain" e "infraestructure": 
 
 A camada domain contém todas  as regras de negócio enquanto na camada infraestructure se encontram todas as 
 implementações correspondentes à comunicação do projeto com o mundo externo: consumo da api do GitHub,
@@ -21,16 +20,18 @@ implementações correspondentes à comunicação do projeto com o mundo externo
 * As camadas se comunicam através de interfaces, ferramentas que utilizo para aplicar o princípio da inversão de
 dependência — fundamental para esse design arquitetural.
 
-* Qualquer classe de uma camada pode estabelecer dependência com classes da camada da qual pertencem.
+* Qualquer classe de uma camada pode estabelecer dependência com classes da camada da qual pertença.
 
-* Não existem dependências das classes da camada de domínio com as classes da camada de infrastructure, mas
-o contrário é permitido.
+* Não existem dependências das classes da camada de infrastructure nas classes da camada de domínio.
 
 
 ## Testes
 
 Implementei testes unitários de integração em todas as classes que implementam negócio, entram em contato com o banco de
 dados ou com o API do GitGub.
+
+Tentei cobrir com testes unitários alguns senários de sucesso e erro. Fiz o mesmo em relação aos testes de integração, que
+se comunicam com banco de dados (Testcontainer) e api (MockServer) embarcados.
 
 ## Princípios S.O.L.I.D
 
@@ -39,8 +40,8 @@ dados ou com o API do GitGub.
 mudar e deve estar sempre que possível fechada para alterações e aberta para extensão;
 * O princípio da Substituição de Liskov é imposto ao desenvolvimento java por todos os compiladores, então com este eu
 não me preocupei;
-* O princípio da segregação das interfaces foi seguido quando as criei somente com as assinaturas de funções que suas
-implementações devessem implementar.
+* O princípio da segregação das interfaces foi seguido quando criei interfaces específicas que tentassem resolver somente um problema ao
+invés de interfaces mais gerais;
 * A inversão de dependência, como já foi dito lá em cima, foi utilizada para estabelecer a comunicação entre as camadas
 que, desta forma, conseguem seguir o fluxo de comunicação estabelecido pelo design arquitetural.
 
