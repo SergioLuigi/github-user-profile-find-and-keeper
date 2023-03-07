@@ -30,7 +30,7 @@ dependência — fundamental para esse design arquitetural.
 Implementei testes unitários de integração em todas as classes que implementam negócio, entram em contato com o banco de
 dados ou com o API do GitGub.
 
-Tentei cobrir com testes unitários alguns senários de sucesso e erro. Fiz o mesmo em relação aos testes de integração, que
+Tentei cobrir com testes unitários alguns cenários de sucesso e erro. Fiz o mesmo em relação aos testes de integração, que
 se comunicam com banco de dados (Testcontainer) e api (MockServer) embarcados.
 
 ## Princípios S.O.L.I.D
