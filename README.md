@@ -77,7 +77,7 @@ A aplicação rodará utilizando os valores para as variáveis de ambientes pres
 
 Verifique se a aplicação está disponível utilizando a seguinte url:
 
-    localhost:8080/actuator/health
+    http://localhost:8080/actuator/health
 
 A resposta deve ser:
 
