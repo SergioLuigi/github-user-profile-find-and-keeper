@@ -18,11 +18,11 @@ implementações correspondentes à comunicação do projeto com o mundo externo
 ### Como as camadas conversam entre si no projeto?
 
 * As camadas se comunicam através de interfaces, ferramentas que utilizo para aplicar o princípio da inversão de
-dependência — fundamental para esse design arquitetural.
+dependência — fundamental para esse design arquitetural;
 
-* Qualquer classe de uma camada pode estabelecer dependência com classes da camada da qual pertença.
+* Essas interfaces dependem dos modelos de domínio para transportar estados entre as camadas;
 
-* Não existem dependências das classes da camada de infrastructure nas classes da camada de domínio.
+* Os pojos da camada infraestructure dependem dos modelos de domínio, devido a necessidade à necessidade de converção.
 
 
 ## Testes
