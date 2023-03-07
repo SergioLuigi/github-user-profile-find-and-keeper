@@ -22,7 +22,7 @@ dependência — fundamental para esse design arquitetural;
 
 * Essas interfaces dependem dos modelos de domínio para transportar estados entre as camadas;
 
-* Os pojos da camada infraestructure dependem dos modelos de domínio, devido a necessidade à necessidade de converção.
+* Os pojos da camada infraestructure dependem dos modelos de domínio, devido a necessidade de converção.
 
 
 ## Testes
