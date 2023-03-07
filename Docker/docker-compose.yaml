@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: /Docker/Dockerfile
+    container_name: github-user-profile-find-and-keeper-app
+    image: github-user-profile-find-and-keeper-app:latest
+    environment:
+      POSTGRESQL_DB: ${POSTGRESQL_DB}
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRESQL_USERNAME: ${POSTGRESQL_USERNAME}
+      POSTGRESQL_HOST: postgres
+      POSTGRESQL_PORT: ${POSTGRESQL_PORT}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - github-user-profile-find-and-keeper
+  postgres:
+    image: postgres:15.2
+    container_name: github-user-profile-find-and-keeper-database
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRES_USER: ${POSTGRESQL_USERNAME}
+      POSTGRES_DB: ${POSTGRESQL_DB}
+    ports:
+      - "${POSTGRESQL_PORT}:5432"
+    networks:
+      - github-user-profile-find-and-keeper
+
+networks:
+  github-user-profile-find-and-keeper:
+    driver: bridge

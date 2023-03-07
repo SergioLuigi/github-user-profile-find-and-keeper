@@ -1,0 +1,25 @@
+server:
+  error:
+    include-message: always
+
+springdoc:
+  swagger-ui:
+    url: /openapi.yaml
+
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://${POSTGRESQL_HOST}:${POSTGRESQL_PORT}/${POSTGRESQL_DB}
+    username: ${POSTGRESQL_USERNAME}
+    password: ${POSTGRESQL_PASSWORD}
+    pool:
+      enabled: false
+  liquibase:
+    url: jdbc:postgresql://${POSTGRESQL_HOST}:${POSTGRESQL_PORT}/${POSTGRESQL_DB}
+    user: ${POSTGRESQL_USERNAME}
+    password: ${POSTGRESQL_PASSWORD}
+
+github:
+  api: https://api.github.com/users
+
+

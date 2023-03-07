@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/V1_1__CREATE_GITHUB_USER_PROFILE.yaml
+  - include:
+      file: db/changelog/V1_0__CREATE_EXTENSION.sql

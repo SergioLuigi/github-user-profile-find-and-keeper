@@ -1,0 +1,139 @@
+openapi: "3.0.1"
+info:
+  title: GitHub User Profile Find And Keeper
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /users/{username}:
+    get:
+      summary: Get user profile, save it and return profile
+      operationId: getProfileByUserName
+      parameters:
+        - in: path
+          name: username
+          schema:
+            type: string
+          required: true
+          example: sergioluigi
+          description: GitHub user's username
+      responses:
+        "200":
+          description: A GithubUserProfileResponse object.
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/GithubUserProfileResponse'
+        "400":
+          description: Username required
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ErrorDTO'
+        "404":
+          description: Github user's profile not found
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ErrorDTO'
+        "500":
+          description: Something unexpected happened. Please contact Support
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ErrorDTO'
+
+
+components:
+  schemas:
+    GithubUserProfileResponse:
+      type: object
+      properties:
+        login:
+          type: string
+        id:
+          type: integer
+          format: int64
+        node_id:
+          type: string
+        avatar_url:
+          type: string
+        gravatar_id:
+          type: string
+        url:
+          type: string
+        html_url:
+          type: string
+        followers_url:
+          type: string
+        following_url:
+          type: string
+        gists_url:
+          type: string
+        starred_url:
+          type: string
+        subscriptions_url:
+          type: string
+        organizations_url:
+          type: string
+        repos_url:
+          type: string
+        events_url:
+          type: string
+        received_events_url:
+          type: string
+        type:
+          type: string
+        site_admin:
+          type: boolean
+        name:
+          type: string
+        company:
+          type: string
+        blog:
+          type: string
+        location:
+          type: string
+        email:
+          type: string
+        hireable:
+          type: boolean
+        bio:
+          type: string
+        twitter_username:
+          type: string
+        public_repos:
+          type: integer
+          format: int64
+        public_gists:
+          type: integer
+          format: int64
+        followers:
+          type: integer
+          format: int64
+        following:
+            type: integer
+            format: int64
+        created_at:
+            type: string
+            format: date-time
+        updated_at:
+            type: string
+            format: date-time
+    ErrorDTO:
+      type: object
+      properties:
+        path:
+          type: string
+        status:
+          type: integer
+          format: int64
+        error:
+          type: string
+        validationErrors:
+          type: object
+          example: {"key": "value"}
+        message:
+          type: string
+        requestId:
+          type: string
