@@ -7,6 +7,7 @@ import br.com.sergioluigi.githubuserprofilefindandkeeper.domain.repository.GitHu
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
 
 import static br.com.sergioluigi.githubuserprofilefindandkeeper.domain.exception.GitHubUserProfileError.USERNAME_REQUIRED;
@@ -24,6 +25,7 @@ public class GitHubUserProfileServiceImpl implements GitHubUserProfileService {
     private final GitHubUserProfileUpdateWhenChangedService gitHubUserProfileUpdateWhenChangedService;
 
     @Override
+    @Transactional
     public Mono<GithubUserProfile> findByUsername(String username){
         return  Mono.justOrEmpty(username)
                 .switchIfEmpty(Mono.defer(() -> Mono.error(new GitHubUserProfileFindAndKeeperException(USERNAME_REQUIRED))))
