@@ -9,9 +9,9 @@ pelo qual tenho me interessado cada vez mais, acredito que utilizarei essa aplic
 o que a obrigará a crescer. Para que isso ocorra de forma organizada segui os insights do Uncle Bob, autor do livro "Arquitetura Limpa", 
 que fala sobre como as camadas de uma aplicação devem se comunicar para que elas possam ser melhor mantidas no tempo.
 
-Criei duas camadas, "domain" e "infraestructure": 
+Criei duas camadas, "domain" e "infrastructure": 
 
-A camada domain contém todas  as regras de negócio enquanto na camada infraestructure se encontram todas as 
+A camada domain contém todas  as regras de negócio enquanto na camada infrastructure se encontram todas as 
 implementações correspondentes à comunicação do projeto com o mundo externo: consumo da api do GitHub,
  operações relacionadas ao banco de dados e disponibilização de uma api Rest.
 
@@ -22,7 +22,7 @@ dependência — fundamental para esse design arquitetural;
 
 * Essas interfaces dependem dos modelos de domínio para transportar estados entre as camadas;
 
-* Os pojos da camada infraestructure dependem dos modelos de domínio, devido a necessidade de converção.
+* Os pojos da camada infrastructure dependem dos modelos de domínio, devido a necessidade de converção.
 
 
 ## Testes
