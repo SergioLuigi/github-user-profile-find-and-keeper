@@ -9,20 +9,20 @@ pelo qual tenho me interessado cada vez mais, acredito que utilizarei essa aplic
 o que a obrigará a crescer. Para que isso ocorra de forma organizada segui os insights do Uncle Bob, autor do livro "Arquitetura Limpa", 
 que fala sobre como as camadas de uma aplicação devem se comunicar para que elas possam ser melhor mantidas no tempo.
 
-Criei duas camadas, "domain" e "infraestructure": 
+Criei duas camadas, "domain" e "infrastructure": 
 
-A camada domain contém todas  as regras de negócio enquanto na camada infraestructure se encontram todas as 
+A camada domain contém todas  as regras de negócio enquanto na camada infrastructure se encontram todas as 
 implementações correspondentes à comunicação do projeto com o mundo externo: consumo da api do GitHub,
  operações relacionadas ao banco de dados e disponibilização de uma api Rest.
 
-### Como as camadas conversam entre si no projeto?
+### Como as camadas conversam entre si?
 
 * As camadas se comunicam através de interfaces, ferramentas que utilizo para aplicar o princípio da inversão de
-dependência — fundamental para esse design arquitetural.
+dependência — fundamental para esse design arquitetural;
 
-* Qualquer classe de uma camada pode estabelecer dependência com classes da camada da qual pertença.
+* Essas interfaces dependem dos modelos de domínio para transportar estados entre as camadas;
 
-* Não existem dependências das classes da camada de infrastructure nas classes da camada de domínio.
+* Os pojos da camada infrastructure dependem dos modelos de domínio, devido a necessidade de converção.
 
 
 ## Testes
@@ -51,7 +51,7 @@ Foi implementada uma exceção que envelopa as possíveis causas de erro de neg�
 ocorrem erros por conta da interação do usuário com a aplicação e é interceptada por uma classe capaz de retornar respostas
 padronizadas que indicam o motivo do erro.
 
-As outras possíveis fontes de erros como uma possível indisponibilidade da Api do GitHub ou do serviço de banco de dados
+As outras possíveis fontes de erros como, por exemplo, indisponibilidade da Api do GitHub ou do serviço de banco de dados
 estão sendo interceptadas de forma genérica e uma resposta padrão é retornada ao usuário quando isso ocorre.
 
 ## O que foi implementado exatamente?
@@ -61,7 +61,7 @@ estão sendo interceptadas de forma genérica e uma resposta padrão é retornad
 * a alteração do perfil do usuário salvo no banco de dados, caso este tenha sido persistido anteriormente;
 * e o retorno do perfil do usuário para o cliente http.
 
-## Como utilizar
+## Como utilizar?
 
 Verifique se você possui Docker instalado e rodando na sua máquina, clone o projeto, 
 abra um terminal na pasta onde o projeto foi baixado e digite no terminal:
