@@ -61,7 +61,7 @@ estão sendo interceptadas de forma genérica e uma resposta padrão é retornad
 * a alteração do perfil do usuário salvo no banco de dados, caso este tenha sido persistido anteriormente;
 * e o retorno do perfil do usuário para o cliente http.
 
-## Como utilizar
+## Como utilizar?
 
 Verifique se você possui Docker instalado e rodando na sua máquina, clone o projeto, 
 abra um terminal na pasta onde o projeto foi baixado e digite no terminal:
