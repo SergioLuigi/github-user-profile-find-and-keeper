@@ -15,7 +15,7 @@ A camada domain contém todas  as regras de negócio enquanto na camada infraest
 implementações correspondentes à comunicação do projeto com o mundo externo: consumo da api do GitHub,
  operações relacionadas ao banco de dados e disponibilização de uma api Rest.
 
-### Como as camadas conversam entre si no projeto?
+### Como as camadas conversam entre si?
 
 * As camadas se comunicam através de interfaces, ferramentas que utilizo para aplicar o princípio da inversão de
 dependência — fundamental para esse design arquitetural;
