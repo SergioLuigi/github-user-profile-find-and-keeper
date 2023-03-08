@@ -51,7 +51,7 @@ Foi implementada uma exceção que envelopa as possíveis causas de erro de neg�
 ocorrem erros por conta da interação do usuário com a aplicação e é interceptada por uma classe capaz de retornar respostas
 padronizadas que indicam o motivo do erro.
 
-As outras possíveis fontes de erros como uma possível indisponibilidade da Api do GitHub ou do serviço de banco de dados
+As outras possíveis fontes de erros como, por exemplo, indisponibilidade da Api do GitHub ou do serviço de banco de dados
 estão sendo interceptadas de forma genérica e uma resposta padrão é retornada ao usuário quando isso ocorre.
 
 ## O que foi implementado exatamente?
