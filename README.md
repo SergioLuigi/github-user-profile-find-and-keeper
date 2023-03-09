@@ -98,6 +98,7 @@ A documentação da api pode ser acessada através da url:
 * Liquibase;
 * Lombok;
 * Junit 5;
+* Testcontainer;
 * MockServer;
 * OpenApi 3.
 
