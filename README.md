@@ -37,7 +37,7 @@ se comunicam com banco de dados (Testcontainer) e api (MockServer) embarcados.
 
 * Durante todo o processo de implementação, estive atento em manter a coesão do código, tentando aplicar os princípios
 "Single Reason to Change" e "Open close" que dizem, respectivamente, que uma classe deve ter somente um motivo para
-mudar e deve estar sempre que possível fechada para alterações e aberta para extensão;
+mudar, deve estar sempre que possível fechada para alterações e aberta para extensão;
 * O princípio da Substituição de Liskov é imposto ao desenvolvimento java por todos os compiladores, então com este eu
 não me preocupei;
 * O princípio da segregação das interfaces foi seguido quando criei interfaces específicas que tentassem resolver somente um problema ao
